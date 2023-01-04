@@ -28,14 +28,19 @@ namespace NBATeams.Models
 
         public int Age { get; set; }
 
+  
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal Height { get; set;}
 
         public int Weight { get; set; }
         public String College { get; set; }
-
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal Salary { get; set; }
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal Points { get; set; }
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal Rebounds { get; set; }
+        [Column(TypeName = "decimal(5, 2)")]
         public decimal Assists { get; set; }
 
 

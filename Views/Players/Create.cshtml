@@ -23,6 +23,51 @@
                 <select asp-for="Player.TeamId" class="form-control" asp-items="@Model.TeamList"></select>
             </div>
             <div class="form-group">
+                <label asp-for="Player.Position" class="control-label"></label>
+                <input asp-for="Player.Position" class="form-control" />
+                <span asp-validation-for="Player.Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Age" class="control-label"></label>
+                <input asp-for="Player.Age" class="form-control" />
+                <span asp-validation-for="Player.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Height" class="control-label"></label>
+                <input asp-for="Player.Height" class="form-control" />
+                <span asp-validation-for="Player.Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Weight" class="control-label"></label>
+                <input asp-for="Player.Weight" class="form-control" />
+                <span asp-validation-for="Player.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.College" class="control-label"></label>
+                <input asp-for="Player.College" class="form-control" />
+                <span asp-validation-for="Player.College" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Salary" class="control-label"></label>
+                <input asp-for="Player.Salary" class="form-control" />
+                <span asp-validation-for="Player.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Points" class="control-label"></label>
+                <input asp-for="Player.Points" class="form-control" />
+                <span asp-validation-for="Player.Points" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Rebounds" class="control-label"></label>
+                <input asp-for="Player.Rebounds" class="form-control" />
+                <span asp-validation-for="Player.Rebounds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Assists" class="control-label"></label>
+                <input asp-for="Player.Assists" class="form-control" />
+                <span asp-validation-for="Player.Assists" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

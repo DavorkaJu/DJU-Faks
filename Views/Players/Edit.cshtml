@@ -1,4 +1,4 @@
-﻿@model NBATeams.Models.Player
+﻿@model NBATeams.ViewModels.PlayerVM
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,16 +13,61 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Player.Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Player.Name" class="control-label"></label>
+                <input asp-for="Player.Name" class="form-control" />
+                <span asp-validation-for="Player.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TeamId" class="control-label"></label>
-                <select asp-for="TeamId" class="form-control" asp-items="ViewBag.TeamId"></select>
-                <span asp-validation-for="TeamId" class="text-danger"></span>
+                <label asp-for="Player.TeamId" class="control-label"></label>
+                <select asp-for="Player.TeamId" class="form-control" asp-items="@Model.TeamList"></select>
+                <span asp-validation-for="Player.TeamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Position" class="control-label"></label>
+                <input asp-for="Player.Position" class="form-control" />
+                <span asp-validation-for="Player.Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Age" class="control-label"></label>
+                <input asp-for="Player.Age" class="form-control" />
+                <span asp-validation-for="Player.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Height" class="control-label"></label>
+                <input asp-for="Player.Height" class="form-control" />
+                <span asp-validation-for="Player.Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Weight" class="control-label"></label>
+                <input asp-for="Player.Weight" class="form-control" />
+                <span asp-validation-for="Player.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.College" class="control-label"></label>
+                <input asp-for="Player.College" class="form-control" />
+                <span asp-validation-for="Player.College" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Salary" class="control-label"></label>
+                <input asp-for="Player.Salary" class="form-control" />
+                <span asp-validation-for="Player.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Points" class="control-label"></label>
+                <input asp-for="Player.Points" class="form-control" />
+                <span asp-validation-for="Player.Points" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Rebounds" class="control-label"></label>
+                <input asp-for="Player.Rebounds" class="form-control" />
+                <span asp-validation-for="Player.Rebounds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Player.Assists" class="control-label"></label>
+                <input asp-for="Player.Assists" class="form-control" />
+                <span asp-validation-for="Player.Assists" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -49,7 +49,6 @@ namespace NBATeams.Controllers
         // GET: Players/Create
         public IActionResult Create()
         {
-            
             PlayerVM playerVM = new PlayerVM()
             {
                 Player = new Player(),
@@ -61,8 +60,7 @@ namespace NBATeams.Controllers
             };
 
             return View(playerVM);
-           
-            //ViewData["Team"] = new SelectList(_context.Teams, "Id", "Name");
+            //ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name");
             //return View();
         }
 
@@ -71,7 +69,7 @@ namespace NBATeams.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,TeamId")] Player player)
+        public async Task<IActionResult> Create([Bind("Id,Name,TeamId,Position,Age,Height,Weight,College,Salary,Points,Rebounds,Assists")] Player player)
         {
             if (ModelState.IsValid)
             {
@@ -96,8 +94,18 @@ namespace NBATeams.Controllers
             {
                 return NotFound();
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", player.TeamId);
-            return View(player);
+
+            PlayerVM playerVM = new PlayerVM();
+            playerVM.Player = player;
+            playerVM.TeamList = _context.Teams.Select(i => new SelectListItem
+            {
+                Text = i.Name,
+                Value = i.Id.ToString()
+            });
+            return View(playerVM);
+
+            //ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", player.TeamId);
+            //return View(player);
         }
 
         // POST: Players/Edit/5
@@ -105,7 +113,7 @@ namespace NBATeams.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TeamId")] Player player)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TeamId,Position,Age,Height,Weight,College,Salary,Points,Rebounds,Assists")] Player player)
         {
             if (id != player.Id)
             {
