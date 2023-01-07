@@ -34,7 +34,7 @@ namespace NBATeams.Models
 
         public int Weight { get; set; }
         public String College { get; set; }
-        [Column(TypeName = "decimal(5, 2)")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Salary { get; set; }
         [Column(TypeName = "decimal(5, 2)")]
         public decimal Points { get; set; }
